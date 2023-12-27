@@ -52,25 +52,18 @@ public class ValidacoesListaTests
     }
 
     //TODO: Corrigir a anotação [Fact]
-    [Theory]
-    [InlineData(new int[] {5,7,8,9})]
-    public void DeveMultiplicarOsElementosDaListaPor2(int[] numeros)
+    [Fact]
+    public void DeveMultiplicarOsElementosDaListaPor2()
     {
         //TODO: Implementar método de teste
 
         // Arrange
-        //var lista = new List<int> {5,7,8,9};
+        var lista = new List<int> {5,7,8,9};
         var resultadoEsperado = new List<int> {10,14,16,18};
         
         // Act // Assert
-
-        Assert.Equal(resultadoEsperado,numeros);
-        // Assert.Collection(numeros,
-        //     item => Assert.Equal(10, item),
-        //     item => Assert.Equal(14, item),
-        //     item => Assert.Equal(16, item),
-        //     item => Assert.Equal(18, item)
-        // );
+        lista = _validacoes.MultiplicarNumerosLista(lista,2);
+        Assert.Equal(resultadoEsperado,lista);
     }
 
     [Fact]
